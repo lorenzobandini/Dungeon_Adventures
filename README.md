@@ -11,7 +11,7 @@ The game is written in Java and it uses the Java Socket API to communicate betwe
 
 ## Installation
 
-To install Dungeon Adventures, you can download the source code from the [github.com/lorenzobandini/Dungeon_Adventures](https://github.com/lorenzobandini/Dungeon_Adventures).
+To install Dungeon Adventures, you can download the source code from the [Github Repository](https://github.com/lorenzobandini/Dungeon_Adventures).
 After that open a terminal and type:
 
 ```sh
