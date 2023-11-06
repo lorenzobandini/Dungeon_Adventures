@@ -24,7 +24,7 @@ public class Listener_Client implements Runnable{
                 }
                 String input = new String(buffer, 0, read);
                 System.out.println(input);
-                if(input.contains("GAME OVER!") || input.contains("YOU WON!")){
+                if(input.contains("Goodbye!")){
                     fine.set(true);
                     break;
                 }

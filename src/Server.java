@@ -21,7 +21,7 @@ public class Server {
             InputStream in = socket.getInputStream();
             OutputStream out = socket.getOutputStream();
 
-            out.write("------------------------------------------------------------\n".getBytes());
+            out.write("============================================================\n".getBytes());
             out.flush();
             out.write(("Welcome to the dungeon!\nChose a name for your character:\n").getBytes());
             out.flush();
@@ -30,7 +30,7 @@ public class Server {
 
             out.write((player.getName() + " let's start this adventure!\n").getBytes()); 
             out.flush();
-            out.write("------------------------------------------------------------\n".getBytes());
+            out.write("============================================================\n".getBytes());
             out.flush();
             
             while (!exit) {
@@ -53,8 +53,13 @@ public class Server {
 
                 String input = new String(buffer, 0, in.read(buffer));
 
+                out.write("================================================\n".getBytes());
+                out.flush();
+
                 if (input.equals("1")) {
                     Monster monster = new Monster();
+                    out.write(("ROUND " + (kills+1) + "\n").getBytes());
+                    out.flush();
                     out.write(("You encountered a monster with " + monster.getHealth() + " health!\n").getBytes());
                     out.flush();
                     combat(player, monster, in, out, buffer);
@@ -68,7 +73,7 @@ public class Server {
                             out.flush();
                             continue;
                         }
-                        out.write(("You drank a bit of a potion and gained " + (int)Math.floor(player.usePotion()*50) +".\n").getBytes());
+                        out.write(("You drank a bit of a potion and gained " + (int)Math.floor(player.usePotion()*50) +" health.\n").getBytes());
                         out.flush();
                         potionboolean = false;
                     }else{
@@ -81,7 +86,7 @@ public class Server {
                     out.flush();
                 }
 
-                out.write("------------------------------------------------------------\n".getBytes());
+                out.write("================================================\n".getBytes());
                 out.flush();
             }
             out.write(("You killed " + kills + " monsters!\n").getBytes());
@@ -91,6 +96,16 @@ public class Server {
             }else{
                 out.write(("CONGRATULATION "+player.getName().toUpperCase()+", YOU WON!\n").getBytes());
             }
+            out.flush();
+            out.write("================================================\n".getBytes());
+            out.flush();
+            out.write("Press `q` to exit.\n".getBytes());
+            out.flush();
+            while(!(new String(buffer,0,in.read(buffer)).equals("q"))){
+                out.write("Press `q` to exit.\n".getBytes());
+                out.flush();
+            }
+            out.write("Goodbye!\n".getBytes());
             out.flush();
             socket.close();
             serverSocket.close();
@@ -102,7 +117,9 @@ public class Server {
 
     
     private static void combat(Player player, Monster monster,InputStream in, OutputStream out, byte[] buffer) throws IOException {
+        int turn = 1;
         while (player.getHealth() > 0 && monster.getHealth() > 0) {
+            out.write(("ROUND " + (kills+1) + " - TURN " + turn + "\n").getBytes());
             out.write(("You have " + player.getHealth()+"/"+ player.getMaxHealth() + " health and " + String.format("%.2f",player.getPotions()) +" potions\nThe monster has " + monster.getHealth() +"/"+monster.getMaxHealth() +" health.\n").getBytes());
             out.flush();
             out.write(("You can deal at maximum "+ player.getMaxHealth() +" damage to the monster.\n").getBytes());
@@ -138,6 +155,8 @@ public class Server {
                 out.write(("The monster attacks you for " + monster.attack(player) + " damage.\n").getBytes());
                 out.flush();
             }
+            turn++;
+            out.write("------------------------------------------------\n".getBytes());
         }
         if (player.getHealth() > 0) {
             out.write("The monster is dead.\n".getBytes());
