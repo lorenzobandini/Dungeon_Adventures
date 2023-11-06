@@ -12,7 +12,21 @@ The game is written in Java and it uses the Java Socket API to communicate betwe
 ## Installation
 
 To install Dungeon Adventures, you can download the source code from the [Github Repository](https://github.com/lorenzobandini/Dungeon_Adventures).
-After that open a terminal and type:
+After that just give the execution permission to the shell script (only the first time) by typing:
+
+```sh
+chmod +x play.sh
+```
+
+and then start the game by typing:
+
+```sh
+./play.sh
+```
+
+that you can use to start the game every time you want.
+
+Alternatively, you can open the terminal in the repository folder and type:
 
 ```sh
 javac Server.java
@@ -36,20 +50,6 @@ and then:
 
 ```sh
 java Client
-```
-
-to start the client.
-
-One time that you have compiled both the server and the client, you can also start the game with the shell script by typing:
-
-```sh
-./play.sh
-```
-
-If doesn't work, you need to give the execution permission to the script (just the first time) by typing:
-
-```sh
-chmod +x play.sh
 ```
 
 ## Usage
