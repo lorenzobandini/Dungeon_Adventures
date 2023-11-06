@@ -1,3 +1,4 @@
+REM Script for Windows
 @echo off
 javac Server.java
 javac Client.java
