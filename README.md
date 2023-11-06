@@ -15,7 +15,7 @@ To install Dungeon Adventures, you can download the source code from the [Github
 
 ### Mac or Linux
 
-After that just give the execution permission to the shell script (only the first time) by typing:
+After that just open a terminal in the directory you just download and give the execution permission to the shell script (only the first time) by typing:
 
 ```sh
 chmod +x play.sh
