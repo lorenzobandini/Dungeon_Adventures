@@ -40,9 +40,21 @@ java Client
 
 to start the client.
 
+One time that you have compiled both the server and the client, you can also start the game with the shell script by typing:
+
+```sh
+./play.sh
+```
+
+If doesn't work, you need to give the execution permission to the script (just the first time) by typing:
+
+```sh
+chmod +x play.sh
+```
+
 ## Usage
 
-To play the game, you need to start the server and the client and you will play on the client terminal.
+To play the game, you need to start the server and the client (or the script) and you will play on the client terminal.
 When you start the client, you will be asked to enter your name. After that you will be able to play the game.
 The action you can do are:
 
