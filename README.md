@@ -26,6 +26,8 @@ and then start the game by typing:
 
 that you can use to start the game every time you want.
 
+--- 
+
 Alternatively, you can open the terminal in the repository folder and type:
 
 ```sh
