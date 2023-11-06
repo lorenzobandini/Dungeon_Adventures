@@ -1,5 +1,5 @@
-REM Script for Windows
 @echo off
+REM Script for Windows
 javac Server.java
 javac Client.java
 start /B java Server
