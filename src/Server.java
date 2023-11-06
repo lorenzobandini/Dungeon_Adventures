@@ -23,7 +23,7 @@ public class Server {
 
             out.write("============================================================\n".getBytes());
             out.flush();
-            out.write(("Welcome to the dungeon!\nChose a name for your character:\n").getBytes());
+            out.write(("Welcome to the dungeon!\nChoose a name for your character:\n").getBytes());
             out.flush();
 
             Player player = new Player(new String(buffer, 0, in.read(buffer)));
