@@ -26,7 +26,7 @@ and then start the game by typing:
 
 that you can use to start the game every time you want.
 
---- 
+---
 
 Alternatively, you can open the terminal in the repository folder and type:
 
@@ -54,12 +54,33 @@ and then:
 java Client
 ```
 
-## Usage
+## User Instructions
 
-To play the game, you need to start the server and the client (or the script) and you will play on the client terminal.
-When you start the client, you will be asked to enter your name. After that you will be able to play the game.
-The action you can do are:
+To play the game you can ran the script `play.sh` or you can run the commands described in the installation section.
 
-- **Fight a monster**
-- **Use a potion**
-- **Exit the game**
+When you start the game you will be asked to insert your name and then your character will be created.
+Your character will have a random amount of health points between 50 and 100 and a random amount of potions between 1 and 3.
+You will be able to use the potions to heal yourself during the game.
+After inserting your name, the game will start and you will be able to play.
+Now you are in the dungeon and you do things by typing the number of the action you want to do between the ones that are displayed.
+Out of combat, the actions you can do are:
+
+- **Fight a Monster**
+- **Use a Potion**
+- **Exit the Game**
+
+If you choose to fight a monster, you will enter in combat with a monster that has a random amount of health points between 10 and 100.
+The combat is turn-based and you can choose between two actions:
+
+- **Attack**
+- **Use a Potion**
+
+If you choose to attack, you will attack the monster and you will deal a random amount of damage between 1 and your max health points.
+If you choose to use a potion, you will use a potion and you will heal yourself for a random amount of health points between 1 and 50.
+After you choose your action, the monster will attack you and it will deal a random amount of damage between 1 and its max health points.
+The combat will end when you or the monster die.
+If you die, the game will end and you will lose.
+If you kill the monster, you will gain 1 point and you will be able to fight another monster.
+The monsters will drop a number of potions between 0 and (its max health points)/25.
+
+The game ends when you die or when you win 15 combats in a row.
