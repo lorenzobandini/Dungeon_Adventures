@@ -68,7 +68,7 @@ java Client
 
 ## User Instructions
 
-To play the game you can ran the script `play.sh` or you can run the commands described in the installation section.
+To play the game you can run the script `play.sh` or you can run the commands described in the installation section.
 
 When you start the game you will be asked to insert your name and then your character will be created.
 Your character will have a random amount of health points between 50 and 100 and a random amount of potions between 1 and 3.
